@@ -15,6 +15,10 @@ def 下载(安装包名字: str):
     for i in name:
         if i[1] == 安装包名字:
             link = i[2]
+    if os.path.exists('tmp/') == True:
+        pass
+    else:
+        os.mkdir('tmp')
     os.chdir('./tmp')  # 切换目录
     if not os.path.exists(wget.filename_from_url(link)):
         start = time.time()  # 下载开始时间
